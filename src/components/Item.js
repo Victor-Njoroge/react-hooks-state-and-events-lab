@@ -5,14 +5,12 @@ function Item({ name, category }) {
   function handleClick(){
     cart ? setCart(false): setCart(true)
   }
-  const text= cart ? "Remove from Cart": "Add to Cart"
-  const unique= cart ? "in-cart": ""
-  const button= cart ? "remove" : "add"
+   
   return (
-    <li className={unique}>
+    <li className={cart ? "in-cart": ""}>
       <span>{name}</span>
       <span className="category">{category}</span>
-      <button className={button} onClick={handleClick}>{text}</button>
+      <button className={cart ? "remove" : "add"} onClick={handleClick}>{ cart ? "Remove from Cart": "Add to Cart"}</button>
     </li>
   );
 }
